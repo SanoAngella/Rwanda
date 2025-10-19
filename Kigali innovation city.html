@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kigali Innovation City</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>The Future Rwanda</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="Bugesera Airport.html">Bugesera Airport</a>
+                <a href="Kigali Green complex.html">Kigali Green Complex</a>
+                <a href="Kigali innovation city.html">Innovation City</a>
+                <a href="Rusumo HEP station.html">Rusumo HEP Station</a>
+                <a href="Nyabarongo II.html">Nyabarongo II Dam</a>
+                <a href="More.html">More</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project">
+        <h2>Kigali Innovation City (KIC)</h2>
+
+        <p><strong>📍 Location:</strong><br>
+            Kigali Innovation City is located in the Kigali Special Economic Zone (Gasabo District, Rwanda) — an area
+            designed for business, education, and technology development.
+        </p>
+
+        <p><strong>🌍 Overview:</strong><br>
+            The Kigali Innovation City (KIC) is one of Rwanda’s most ambitious projects. It aims to transform the
+            country
+            into a technology and knowledge-based economy by building a world-class hub for innovation, research, and
+            entrepreneurship.
+        </p>
+
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="Images/Kigali city inno.png" alt="KIC 1"></div>
+                <div class="slide"><img src="Images/kigali inno 2.png" alt="KIC 2"></div>
+            </div>
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+            <div class="dots"></div>
+        </div>
+
+        <p>It’s part of Rwanda’s long-term national plan called <strong>Vision 2050</strong>, which focuses on economic
+            growth, education, and technology.</p>
+
+        <h3>🏗️ Main Components</h3>
+        <ul>
+            <li><strong>Education:</strong> Home to CMU-Africa, ALU, and other universities.</li>
+            <li><strong>Innovation & Research:</strong> Labs and startup centers.</li>
+            <li><strong>Business Zone:</strong> Offices and co-working hubs.</li>
+            <li><strong>Residential & Lifestyle:</strong> Modern housing and recreation areas.</li>
+        </ul>
+
+        <h3>⚙️ Technology & Sustainability</h3>
+        <ul>
+            <li>Reliable internet and digital infrastructure</li>
+            <li>Energy-efficient buildings</li>
+            <li>Sustainable transport and green systems</li>
+            <li>Waste and water management</li>
+        </ul>
+
+        <h3>💰 Partners & Investment</h3>
+        <ul>
+            <li>Supported by the Rwanda Development Board (RDB)</li>
+            <li>Developed in partnership with Africa50 and the African Development Bank (AfDB)</li>
+            <li>Estimated value: over $300 million USD</li>
+        </ul>
+    </section>
+
+    <script>
+        const slides = document.querySelector(".slides");
+        const slideItems = document.querySelectorAll(".slide");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const dotsContainer = document.querySelector(".dots");
+
+        let index = 0;
+        const totalSlides = slideItems.length;
+
+        // Create dots dynamically
+        slideItems.forEach((_, i) => {
+            const dot = document.createElement("button");
+            if (i === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => showSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll("button");
+
+        function showSlide(i) {
+            if (i >= totalSlides) index = 0;
+            else if (i < 0) index = totalSlides - 1;
+            else index = i;
+
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        nextBtn.addEventListener("click", () => showSlide(index + 1));
+        prevBtn.addEventListener("click", () => showSlide(index - 1));
+
+        // Auto slide every 4 seconds
+        setInterval(() => showSlide(index + 1), 4000);
+    </script>
+</body>
+
+</html>

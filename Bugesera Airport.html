@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>The future Rwanda</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="Bugesera Airport.html">Bugesera Airport</a>
+                <a href="Kigali Green complex.html">Kigali Green Complex</a>
+                <a href="Kigali innovation city.html">Innovation City</a>
+                <a href="Rusumo HEP station.html">Rusumo HEP Station</a>
+                <a href="Nyabarongo II.html">Nyabarongo II Dam</a>
+                <a href="More.html">More</a>
+            </nav>
+        </div>
+    </header>
+    <section class="project" id="bugesera-airport">
+        <h2>Bugesera International Airport</h2>
+
+        <p><strong>📍 Location:</strong><br>
+            The Bugesera International Airport is located in <strong>Bugesera District</strong>, about 25 km south of
+            Kigali.
+            It’s being built near the town of Rilima in the Eastern Province.
+        </p>
+
+        <p><strong>🌍 Overview:</strong><br>
+            The Bugesera International Airport is one of Rwanda’s largest and most ambitious infrastructure projects.
+            It is designed to become a modern, eco-friendly airport that will serve as a major regional hub for
+            passengers and cargo.
+        </p>
+
+        <!-- ✅ Slider starts -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="Images/Bugesera A 1.png" alt="Bugesera A"></div>
+                <div class="slide"><img src="Images/Bugesera A 2.png" alt="Bugesera A"></div>
+                <div class="slide"><img src="Images/Bugesera A3.png" alt="Bugesera A"></div>
+                <div class="slide"><img src="Images/Bugesera A 4.png" alt="Bugesera A"></div>
+            </div>
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+            <div class="dots"></div>
+        </div>
+        <!-- ✅ Slider ends -->
+
+        <h3>🏗️ Construction Phases</h3>
+        <ul>
+            <li><strong>Phase 1:</strong> Capacity for 1.7 million passengers, one 4.2 km runway, and modern terminal
+                facilities (expected completion: 2026).</li>
+            <li><strong>Phase 2:</strong> Expansion to handle 4.5 million passengers, more runways and terminals.</li>
+        </ul>
+
+        <h3>💰 Cost & Investors</h3>
+        <ul>
+            <li>Total cost: over $1.3 billion USD</li>
+            <li><strong>Qatar Airways:</strong> owns 60% of the project</li>
+            <li><strong>Rwanda Government:</strong> owns 40% through the Rwanda Development Board (RDB)</li>
+            <li>Constructed by <strong>Mota-Engil</strong> (Portuguese company)</li>
+        </ul>
+
+        <h3>🌿 Green & Smart Design</h3>
+        <ul>
+            <li>Solar power systems to reduce emissions</li>
+            <li>Rainwater harvesting and recycling</li>
+            <li>Energy-efficient lighting and cooling</li>
+            <li>Eco-friendly construction materials</li>
+        </ul>
+
+        <h3>✈️ Key Features</h3>
+        <ul>
+            <li><strong>Terminal Building:</strong> Spacious, modern design with smart check-in</li>
+            <li><strong>Runway:</strong> 4.2 km long, supports large aircraft</li>
+            <li><strong>Cargo Hub:</strong> Supports export of goods and regional trade</li>
+            <li><strong>Passenger Services:</strong> Lounges, duty-free shops, and hotels</li>
+        </ul>
+
+        <h3>🎯 Goals</h3>
+        <ul>
+            <li>Make Rwanda a top aviation hub in East Africa</li>
+            <li>Boost tourism and business travel</li>
+            <li>Support RwandAir’s global growth</li>
+            <li>Promote sustainability and innovation</li>
+        </ul>
+
+        <p><strong>🏙️ Impact:</strong><br>
+            Bugesera International Airport will create jobs, attract investors, and connect Rwanda more closely to the
+            world — all while supporting Vision 2050’s goal of building a smart, green, and connected nation.
+        </p>
+    </section>
+
+
+    <script>
+        const slides = document.querySelector(".slides");
+        const slideItems = document.querySelectorAll(".slide");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const dotsContainer = document.querySelector(".dots");
+
+        let index = 0;
+        const totalSlides = slideItems.length;
+
+        // Create dots dynamically
+        slideItems.forEach((_, i) => {
+            const dot = document.createElement("button");
+            if (i === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => showSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll("button");
+
+        function showSlide(i) {
+            if (i >= totalSlides) index = 0;
+            else if (i < 0) index = totalSlides - 1;
+            else index = i;
+
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        nextBtn.addEventListener("click", () => showSlide(index + 1));
+        prevBtn.addEventListener("click", () => showSlide(index - 1));
+
+        // Auto slide every 4 seconds
+        setInterval(() => showSlide(index + 1), 4000);
+    </script>
+</body>
+
+</html>

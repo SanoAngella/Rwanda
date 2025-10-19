@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kigali Green Complex</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>The Future Rwanda</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="Bugesera Airport.html">Bugesera Airport</a>
+                <a href="Kigali Green complex.html">Kigali Green Complex</a>
+                <a href="Kigali innovation city.html">Innovation City</a>
+                <a href="Rusumo HEP station.html">Rusumo HEP Station</a>
+                <a href="Nyabarongo II.html">Nyabarongo II Dam</a>
+                <a href="More.html">More</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project" id="kigali-green-complex">
+        <h2>Kigali Green Complex</h2>
+
+        <p><strong>📍 Location:</strong><br>
+            The Kigali Green Complex is located in <strong>downtown Kigali</strong>, near the Central Business District
+            (CBD).
+            It stands as one of the most iconic and modern eco-friendly buildings in Rwanda.
+        </p>
+
+        <p><strong>🌍 Overview:</strong><br>
+            The <strong>Kigali Green Complex</strong> is a modern, sustainable commercial building developed by the
+            <strong>Rwanda Social Security Board (RSSB)</strong>. It promotes Rwanda’s goal of creating green, smart,
+            and environmentally responsible infrastructure.
+        </p>
+
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="Images/KGC 1.png" alt="Kigali Green Complex 1"></div>
+                <div class="slide"><img src="Images/KGC 2.png" alt="Kigali Green Complex 2"></div>
+                <div class="slide"><img src="Images/KGC 3.png" alt="Kigali Green Complex 3"></div>
+            </div>
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+            <div class="dots"></div>
+        </div>
+
+        <h3>🏗️ Design & Construction</h3>
+        <ul>
+            <li>Built with environmentally sustainable materials</li>
+            <li>Designed to reduce energy consumption and carbon emissions</li>
+            <li>Includes rainwater harvesting and waste management systems</li>
+            <li>Equipped with solar panels for renewable energy</li>
+            <li>Uses smart building technologies for lighting and ventilation</li>
+        </ul>
+
+        <h3>💼 Purpose & Use</h3>
+        <ul>
+            <li>Hosts government and private offices</li>
+            <li>Includes shops, banks, and restaurants</li>
+            <li>Provides conference halls and parking facilities</li>
+            <li>Acts as a business and sustainability hub in Kigali</li>
+        </ul>
+
+        <h3>🌿 Green Innovations</h3>
+        <ul>
+            <li>Certified as a sustainable “green building”</li>
+            <li>Uses natural lighting and ventilation</li>
+            <li>Energy-efficient air conditioning and LED systems</li>
+            <li>Encourages paperless and digital workspaces</li>
+        </ul>
+
+        <h3>💰 Economic & Social Benefits</h3>
+        <ul>
+            <li>Supports Rwanda’s Vision 2050 for sustainable development</li>
+            <li>Creates employment in construction and management</li>
+            <li>Promotes Rwanda’s image as a green, modern nation</li>
+            <li>Encourages eco-friendly construction across the region</li>
+        </ul>
+
+        <p><strong>🏙️ Summary:</strong><br>
+            The Kigali Green Complex is more than a building — it’s a symbol of Rwanda’s green future. It demonstrates
+            how modern African cities can grow sustainably by combining technology, architecture, and environmental
+            care.
+        </p>
+    </section>
+
+    <script>
+        const slides = document.querySelector(".slides");
+        const slideItems = document.querySelectorAll(".slide");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const dotsContainer = document.querySelector(".dots");
+
+        let index = 0;
+        const totalSlides = slideItems.length;
+
+        // Create dots dynamically
+        slideItems.forEach((_, i) => {
+            const dot = document.createElement("button");
+            if (i === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => showSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll("button");
+
+        function showSlide(i) {
+            if (i >= totalSlides) index = 0;
+            else if (i < 0) index = totalSlides - 1;
+            else index = i;
+
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        nextBtn.addEventListener("click", () => showSlide(index + 1));
+        prevBtn.addEventListener("click", () => showSlide(index - 1));
+
+        // Auto slide every 4 seconds
+        setInterval(() => showSlide(index + 1), 4000);
+    </script>
+
+</body>
+
+</html>
