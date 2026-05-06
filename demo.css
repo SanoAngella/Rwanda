@@ -603,8 +603,17 @@ address {
         grid-column: auto;
     }
 
+    .project-image,
+    .project-content {
+        order: initial;
+    }
+
     .project-image {
         min-height: 260px;
+    }
+
+    .project-image img {
+        max-height: none;
     }
 
     .back-top {
