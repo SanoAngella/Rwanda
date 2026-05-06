@@ -204,18 +204,19 @@ h3 {
 
 .hero-actions {
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 34px;
+    gap: 8px;
+    margin-top: 26px;
 }
 
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
-    padding: 0 20px;
+    min-height: 36px;
+    padding: 0 13px;
     border: 1px solid var(--ink);
     text-decoration: none;
+    font-size: 0.82rem;
     font-weight: 800;
     cursor: pointer;
     transition: transform 180ms ease, background 180ms ease, color 180ms ease;
@@ -354,13 +355,14 @@ h3 {
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: 14px;
 }
 
 .project-card {
     display: grid;
-    grid-template-rows: 230px 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 34%);
+    grid-template-rows: auto;
     min-height: 0;
     border: 1px solid var(--ink);
     background: var(--paper);
@@ -372,13 +374,12 @@ h3 {
 }
 
 .project-card-large {
-    grid-column: span 2;
-    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
-    grid-template-rows: auto;
-    min-height: 390px;
+    grid-column: auto;
+    min-height: 0;
 }
 
 .project-image {
+    order: 2;
     min-height: 0;
     overflow: hidden;
     background: #d8d0c0;
@@ -387,6 +388,8 @@ h3 {
 .project-image img {
     width: 100%;
     height: 100%;
+    min-height: 210px;
+    max-height: 260px;
     object-fit: cover;
     filter: saturate(0.88) contrast(1.05);
     transition: transform 420ms ease;
@@ -397,14 +400,16 @@ h3 {
 }
 
 .project-content {
+    order: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 28px;
-    padding: clamp(22px, 3vw, 34px);
+    justify-content: center;
+    gap: 14px;
+    padding: clamp(20px, 3vw, 32px);
 }
 
 .project-content p:not(.project-index) {
+    max-width: 640px;
     color: var(--muted);
 }
 
