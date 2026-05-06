@@ -573,7 +573,7 @@ address {
     }
 
     h1 {
-        max-width: 10ch;
+        max-width: 100%;
     }
 
     .project-list,
@@ -594,6 +594,8 @@ address {
     .project-card,
     .project-card-large {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-column: auto;
     }
 
     .project-image {
@@ -650,7 +652,7 @@ address {
     }
 
     .statement p {
-        font-size: clamp(2rem, 10vw, 3.4rem);
+        font-size: clamp(1.75rem, 8vw, 3rem);
     }
 
     .newsletter-form div {
