@@ -289,18 +289,20 @@ a {
 }
 
 .slider-controls {
+    position: absolute;
+    inset: 0;
     justify-content: space-between;
     gap: 12px;
-    padding: 14px;
-    border-top: 1px solid var(--ink);
+    padding: 18px;
+    pointer-events: none;
 }
 
 .prev,
 .next,
 .dots button {
-    border: 1px solid var(--ink);
-    background: var(--paper);
-    color: var(--ink);
+    border: 0;
+    background: rgba(16, 16, 14, 0.72);
+    color: var(--white);
     cursor: pointer;
     font: inherit;
     font-weight: 800;
@@ -308,25 +310,55 @@ a {
 
 .prev,
 .next {
-    min-width: 86px;
-    min-height: 42px;
+    position: relative;
+    z-index: 2;
+    min-width: 48px;
+    width: 48px;
+    min-height: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 0;
+    pointer-events: auto;
+}
+
+.prev::before,
+.next::before {
+    display: block;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.prev::before {
+    content: "<";
+}
+
+.next::before {
+    content: ">";
 }
 
 .dots {
+    position: absolute;
+    right: 0;
+    bottom: 18px;
+    left: 0;
     display: flex;
     justify-content: center;
     gap: 8px;
+    pointer-events: auto;
 }
 
 .dots button {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     padding: 0;
+    border: 1px solid rgba(255, 253, 248, 0.8);
+    border-radius: 50%;
+    background: rgba(255, 253, 248, 0.62);
     font-size: 0;
 }
 
 .dots button.active {
-    background: var(--green);
+    background: var(--white);
 }
 
 .video-feature {
@@ -418,7 +450,6 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .slider-controls,
     .next-projects,
     .site-footer {
         align-items: stretch;
@@ -427,6 +458,9 @@ a {
 
     .prev,
     .next {
-        width: 100%;
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+        min-height: 44px;
     }
 }
