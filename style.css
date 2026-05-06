@@ -26,6 +26,16 @@ body {
     line-height: 1.55;
 }
 
+h1,
+h2,
+h3,
+p,
+li,
+a,
+span {
+    overflow-wrap: anywhere;
+}
+
 img,
 video {
     display: block;
@@ -120,6 +130,13 @@ a {
     border-bottom: 1px solid var(--line);
 }
 
+.project-hero > *,
+.project-body > *,
+.content-card,
+.fact-list li {
+    min-width: 0;
+}
+
 .project-hero h1 {
     max-width: 11ch;
     margin: 0 0 24px;
@@ -148,6 +165,7 @@ a {
 
 .hero-image {
     margin: 0;
+    min-width: 0;
     border: 1px solid var(--ink);
     background: var(--white);
     box-shadow: var(--shadow);
@@ -431,6 +449,12 @@ a {
     .project-hero h1 {
         max-width: 12ch;
         font-size: clamp(3.4rem, 14vw, 7rem);
+    }
+}
+
+@media (max-width: 1120px) {
+    .project-hero {
+        grid-template-columns: 1fr;
     }
 }
 
