@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kigali Innovation City</title>
+    <title>Kigali Innovation City | The Rwanda Rwiza</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="header-content">
-            <h1>The Future Rwanda</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="Bugesera Airport.html">Bugesera Airport</a>
-                <a href="Kigali Green complex.html">Kigali Green Complex</a>
-                <a href="Kigali innovation city.html">Innovation City</a>
-                <a href="Rusumo HEP station.html">Rusumo HEP Station</a>
-                <a href="Nyabarongo II.html">Nyabarongo II Dam</a>
-                <a href="More.html">More</a>
-            </nav>
-        </div>
+    <header class="site-header">
+        <a class="brand" href="demoindex.html">
+            <span class="brand-mark"></span>
+            <span>The Rwanda Rwiza</span>
+        </a>
+        <nav class="site-nav" aria-label="Project navigation">
+            <a href="demoindex.html">Home</a>
+            <a href="Bugesera Airport.html">Bugesera</a>
+            <a href="Kigali Green complex.html">Green Complex</a>
+            <a href="Kigali innovation city.html" aria-current="page">Innovation City</a>
+            <a href="Rusumo HEP station.html">Rusumo</a>
+            <a href="Nyabarongo II.html">Nyabarongo</a>
+            <a href="More.html">More</a>
+        </nav>
     </header>
 
-    <section class="project">
-        <h2>Kigali Innovation City (KIC)</h2>
-
-        <p><strong>📍 Location:</strong><br>
-            Kigali Innovation City is located in the Kigali Special Economic Zone (Gasabo District, Rwanda) — an area
-            designed for business, education, and technology development.
-        </p>
-
-        <p><strong>🌍 Overview:</strong><br>
-            The Kigali Innovation City (KIC) is one of Rwanda’s most ambitious projects. It aims to transform the
-            country
-            into a technology and knowledge-based economy by building a world-class hub for innovation, research, and
-            entrepreneurship.
-        </p>
-
-        <div class="slider">
-            <div class="slides">
-                <div class="slide"><img src="Images/Kigali city inno.png" alt="KIC 1"></div>
-                <div class="slide"><img src="Images/kigali inno 2.png" alt="KIC 2"></div>
+    <main>
+        <section class="project-hero">
+            <div>
+                <p class="kicker">03 / Technology</p>
+                <h1>Kigali Innovation City</h1>
+                <p class="lead">A district designed to connect education, research, startups, and digital investment in one place.</p>
+                <div class="project-meta">
+                    <span>Gasabo District</span>
+                    <span>Technology</span>
+                    <span>Vision 2050</span>
+                </div>
             </div>
+            <figure class="hero-image">
+                <img src="Images/kigali inno 2.png" alt="Kigali Innovation City campus">
+                <figcaption>
+                    <span>Special Economic Zone</span>
+                    <span>Knowledge economy</span>
+                </figcaption>
+            </figure>
+        </section>
 
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
-            <div class="dots"></div>
-        </div>
+        <section class="project-body">
+            <aside class="project-aside">
+                <p>Kigali Innovation City is planned in the Kigali Special Economic Zone, where business, education, technology, and research can reinforce each other.</p>
+                <a class="text-link" href="demoindex.html#projects">Back to projects</a>
+            </aside>
+            <div class="content-stack">
+                <article class="content-card">
+                    <p class="label">Overview</p>
+                    <h2>A campus for Rwanda's knowledge economy.</h2>
+                    <p>KIC supports Rwanda's goal of becoming a technology-led economy by bringing universities, labs, startups, offices, and lifestyle spaces into one coordinated innovation district.</p>
+                </article>
+                <article class="content-card">
+                    <p class="label">Main components</p>
+                    <ul class="fact-list">
+                        <li><strong>Education</strong>Designed to host universities and specialist learning institutions.</li>
+                        <li><strong>Research</strong>Labs and research centers support applied innovation.</li>
+                        <li><strong>Business</strong>Offices and co-working spaces create room for startups and investors.</li>
+                        <li><strong>Living</strong>Residential and lifestyle spaces make the district more complete.</li>
+                    </ul>
+                </article>
+                <article class="content-card">
+                    <p class="label">Technology and partners</p>
+                    <ul class="fact-list">
+                        <li><strong>Infrastructure</strong>Reliable digital systems support education and enterprise.</li>
+                        <li><strong>Sustainability</strong>Energy-efficient buildings and green systems shape the plan.</li>
+                        <li><strong>Partners</strong>Supported through Rwanda's development ecosystem and international investment partners.</li>
+                        <li><strong>Goal</strong>Grow talent, entrepreneurship, and research capacity inside Rwanda.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
-        <p>It’s part of Rwanda’s long-term national plan called <strong>Vision 2050</strong>, which focuses on economic
-            growth, education, and technology.</p>
+        <section class="gallery-section" aria-label="Kigali Innovation City image gallery">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="Images/Kigali city inno.png" alt="Kigali Innovation City overview"></div>
+                    <div class="slide"><img src="Images/kigali inno 2.png" alt="Kigali Innovation City campus image"></div>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev" type="button">Prev</button>
+                    <div class="dots"></div>
+                    <button class="next" type="button">Next</button>
+                </div>
+            </div>
+        </section>
 
-        <h3>🏗️ Main Components</h3>
-        <ul>
-            <li><strong>Education:</strong> Home to CMU-Africa, ALU, and other universities.</li>
-            <li><strong>Innovation & Research:</strong> Labs and startup centers.</li>
-            <li><strong>Business Zone:</strong> Offices and co-working hubs.</li>
-            <li><strong>Residential & Lifestyle:</strong> Modern housing and recreation areas.</li>
-        </ul>
+        <nav class="next-projects" aria-label="Next project">
+            <a href="Kigali Green complex.html">Previous: Kigali Green Complex</a>
+            <a href="Rusumo HEP station.html">Next: Rusumo HEP Station</a>
+        </nav>
+    </main>
 
-        <h3>⚙️ Technology & Sustainability</h3>
-        <ul>
-            <li>Reliable internet and digital infrastructure</li>
-            <li>Energy-efficient buildings</li>
-            <li>Sustainable transport and green systems</li>
-            <li>Waste and water management</li>
-        </ul>
+    <footer class="site-footer">
+        <p>The Rwanda Rwiza</p>
+        <a href="#">Back to top</a>
+    </footer>
 
-        <h3>💰 Partners & Investment</h3>
-        <ul>
-            <li>Supported by the Rwanda Development Board (RDB)</li>
-            <li>Developed in partnership with Africa50 and the African Development Bank (AfDB)</li>
-            <li>Estimated value: over $300 million USD</li>
-        </ul>
-    </section>
-
-    <script src="project.js">
-       
-    </script>
+    <script src="project.js"></script>
 </body>
-
 </html>
